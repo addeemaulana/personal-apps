@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Crash Course | DOM Manipulation</title>
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.js"
+      integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      html {
+        font-size: 10px;
+      }
+
+      body {
+        font-size: 1.7rem;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5em;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px solid #000;
+        margin-bottom: 10px;
+      }
+
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Lorem, ipsum dolor.</h1>
+    </header>
+
+    <div id="container">
+      <button id="btn1">Button</button>
+      <div id="wrapper">
+        <p class="para1">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
+          ducimus eius iste recusandae dignissimos, atque saepe! Architecto
+          aperiam eos saepe quos? Aperiam, possimus! Dolores, molestiae fuga
+          nisi aliquid enim et!
+        </p>
+        <p class="para2">
+          Labore ducimus eius iste recusandae dignissimos, atque saepe!
+          Architecto aperiam eos saepe quos? Aperiam, possimus! Dolores
+        </p>
+        <input type="text" name="input" id="newItem" />
+        <ul class="list">
+          <li>List 1</li>
+          <li>List 2</li>
+          <li>List 3</li>
+          <li>List 4</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        // $("#btn1").on("click", function() {
+        //   $("#wrapper").css({
+        //     transform: "translateY(50px)",
+        //     transition: "all 1s 1s"
+        //   });
+        //   $("#btn1").css({
+        //     transform: "translateY(20px)",
+        //     transition: "all 1s in"
+        //   });
+        // // });
+        // $("ul.list").append("<li>List 5</li>");
+        // $("ul.list").prepend("<li>List 0</li>");
+        // $(".para1").appendTo(".para2");
+        // $(".para2").appendTo(".para1");
+        $("#newItem").keyup(function(e) {
+          if (e.which == 13) {
+            e.preventDefault();
+            $("ul.list").append("<li>" + e.target.value + "</li>");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+  1.Selectors
+  2.Events
+  3.DOM Manipulation
+  4.Methods
+  5.Effects & Animation
+  6.Ajax
+
+-->
